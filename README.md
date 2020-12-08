@@ -6,3 +6,4 @@
 	
 Let's update how to simulate 
 
+1. start seed dispersal.R
