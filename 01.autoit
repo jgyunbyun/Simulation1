@@ -1,0 +1,425 @@
+   ;R open
+   ;Sleep(3000)
+   ;Run("C:\Program Files\R\R-3.1.3\bin\i386\Rgui.exe")
+
+   Sleep(4000)
+ ;Send("#r")
+ ;Sleep(1000)
+  ; send("C:\Users\Jaegyun\SkyDrive\R\seed_dispersal.v.2.1.R")
+   ;Sleep(500)
+;Send("{Enter}")
+;Sleep(2000)
+   $site="bn1"
+   ;replace period
+
+   For $i =62 to 100
+   ;Send("^r")
+   $period="period<-" ;replace in R script
+   $input="c:\silva\"&$site&"\"&"seed_"&$site&"_"&$i&".slv" ;input path in SILVA
+   $outputlist="c:\silva\"&$site&"\"&$site&"_list_"&$i ;save output list in SILVA
+   $input2="c:\silva\"&$site&"\"&"sub_seed_"&$site&"_"&$i&".slv"
+   $input3="c:\silva\"&$site&"\"&$site&"_"&$i&".ztr" ; input ztr file for F-tree
+   ;$inbmp="a_seed_"&$site&"_"&$i&".bmp" ;input bmp in SILVA
+   $inbmp2="a_seed_"&$site&"_"&$i&".bmp" ;input bmp in SILVA
+   $outbmp="b_seed_"&$site&"_"&$i+1&".bmp" ;output bmp in SILVA
+   $output="c:\silva\"&$site&"\"&$site&"_"&$i+1&".slv" ;output SLV through simulation
+   ;send($period&$i-1)
+   ;Sleep(1000)
+   ;Send("{tab}")
+   ;send($period&$i)
+   ;Sleep(1000)
+   ;Send("{Enter}")
+   ;Sleep(1000)
+   ;Send("y")
+   ;Next
+
+   ;copy  R sentence
+ ;  Sleep(1000)
+  ; Send("^a")
+   ;Sleep(1000)
+   ;Send("^c")
+   ;Sleep(1000)
+
+   ;Send("#m")
+   ;Sleep(2000)
+
+   ;Load and Run in R
+   Sleep(1000)
+   Run("C:\Program Files\R\R-3.1.3\bin\i386\Rgui.exe")
+   Sleep(3000)
+   ;Send("^v")
+   ;Sleep(5000)
+   Send("!f")
+   Sleep(1000)
+   Send("o")
+   Sleep(1000)
+   send("C:\SILVA\seed_dispersal.v.3.0.3.1.bn1.R") ; path R script
+   Sleep(1000)
+   Send("{Enter}")
+   Sleep(1000)
+Send("^h")
+Sleep(1000)
+send("period<-0")
+Sleep(1000)
+send("{tab}")
+Sleep(1000)
+send($period&$i)
+Sleep(1000)
+Send("{Enter}")
+Sleep(1000)
+send("!r")
+Sleep(1000)
+send("{ESC}")
+Sleep(500)
+send("{ESC}")
+; run all
+Sleep(1000)
+Send("!e")
+Sleep(500)
+send("n")
+Sleep(10000)
+
+   ;terminate R
+   Send("!f")
+   Sleep(1000)
+   Send("x")
+   Sleep(1000)
+   Send("n")
+   Sleep(1000)
+   Send("n")
+   Sleep(1000)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+   ;Run SILVA
+   Sleep(3000)
+   Send("#r")
+   Sleep(1000)
+   send("C:\Program files\SILVA\SILVA.exe")
+   Sleep(500)
+   Send("{Enter}")
+
+   ;Open file (.slv)
+   Sleep(5000)
+   Send("!f")
+
+   Sleep(500)
+
+   Send("o")
+
+   Sleep(500)
+
+   Send("a")
+   Sleep(1000)
+
+   Send($input)
+   Sleep(1000)
+   Send("{Enter}")
+   Sleep(1000)
+   ;Send("{Enter}")
+   Sleep(1000)
+
+   ;change period in simulation menu
+   Send("{Alt}")
+   Sleep(1000)
+   send("s")
+   Sleep(1500)
+   ;Send("s")
+   ;Sleep(500)
+   Send("u")
+   sleep(500)
+   Send("u")
+   Sleep(1000)
+   Send("{tab}")
+   Sleep(1000)
+   Send("{tab}")
+   Sleep(1000)
+
+   Send("2")
+   Sleep(1000)
+   Send("{Enter}")
+   Sleep(1000)
+
+   ;start simulation for lst
+   sleep(2000)
+   Send("{Alt}")
+   Sleep(1000)
+   send("s")
+   Sleep(1000)
+   Send("t")
+   Sleep(700)
+   Send("t")
+
+   Sleep(3000)
+
+Msgbox(4096+1, "List_"&$i, "This message box will timeout after 3sec or select the OK button.", 3)
+;MsgBox($MB_SYSTEMMODAL, "Process", "This message box will timeout after 3minutes or select the OK button.", 300)
+Sleep(1500)
+
+   ;save result as .lst
+   ;$output="c:\silva\"&$site&"\"&$site&"_"&$i+1&".slv"
+   Sleep(1000)
+   Send("!f")
+   Sleep(1000)
+   Send("a")
+   Sleep(1500)
+   send($outputlist)
+   Sleep(1500)
+   Send("{Enter}")
+   Sleep(1000)
+
+;terminate SILVA
+   Send("!f")
+   Sleep(500)
+   Send("x")
+   Sleep(1000)
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;subset in R depends on tree competition
+ ;Load and Run in R
+   Sleep(1000)
+   Run("C:\Program Files\R\R-3.1.3\bin\i386\Rgui.exe")
+   Sleep(3000)
+   ;Send("^v")
+   ;Sleep(5000)
+   Send("!f")
+   Sleep(1000)
+   Send("o")
+   Sleep(1000)
+   send("C:\SILVA\subset from seed list_bn1_v2.1.2.R") ; path R script
+   Sleep(1000)
+   Send("{Enter}")
+   Sleep(1000)
+Send("^h")
+Sleep(1000)
+send("period<-0")
+Sleep(1000)
+send("{tab}")
+Sleep(1000)
+send($period&$i)
+Sleep(1000)
+Send("{Enter}")
+Sleep(1000)
+send("!r")
+Sleep(1000)
+send("{ESC}")
+Sleep(500)
+send("{ESC}")
+; run all
+Sleep(1000)
+Send("!e")
+Sleep(500)
+send("n")
+Sleep(6000)
+
+   ;terminate R
+   Send("!f")
+   Sleep(500)
+   Send("c")
+   Sleep(500)
+   Send("n")
+   Sleep(500)
+   Send("!f")
+   Sleep(500)
+   Send("x")
+   Sleep(1000)
+   Send("n")
+   Sleep(1000)
+   Send("n")
+   Sleep(1000)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2 load subset seeds
+
+   ;Run SILVA
+   Sleep(3000)
+   Send("#r")
+   Sleep(1000)
+   send("C:\Program files\SILVA\SILVA.exe")
+   Sleep(500)
+   Send("{Enter}")
+
+   ;Open file (.slv)
+   Sleep(5000)
+   Send("!f")
+
+   Sleep(1000)
+
+   Send("o")
+
+   Sleep(500)
+
+   Send("a")
+   Sleep(1000)
+   ;give file name
+
+   ;$input="c:\silva\"&$site&"\"&"seed_"&$site&"_"&$i&".slv"
+   ;$input2="seed_"&$site&"_"&$i+1&".bmp"
+   Send($input2)
+   Sleep(1000)
+   Send("{Enter}")
+   Sleep(1000)
+   Send("{Enter}")
+   Sleep(1000)
+
+   ;input bmp of seedlings result
+   ;Send("b")
+   ;Sleep(1000)
+   ;Send($inbmp)
+   ;Sleep(1500)
+   ;Send("{Enter}")
+   ;Sleep(1000)
+   ;Send("{Enter}")
+   ;Sleep(1000)
+
+
+   ;minimize window
+   ;Send("!w")
+   ;Sleep(1000)
+   ;send("m")
+   ;Sleep(1500)
+
+   ;change period in simulation menu
+   Send("{Alt}")
+   Sleep(1000)
+   send("s")
+   Sleep(1500)
+   ;Send("s")
+   ;Sleep(500)
+   Send("u")
+   sleep(500)
+   Send("u")
+   Sleep(1000)
+   Send("{tab}")
+   Sleep(1000)
+   Send("{tab}")
+   Sleep(1000)
+
+   Send("2")
+   Sleep(1000)
+   Send("{Enter}")
+   Sleep(1000)
+
+   ;options for management (Bn)
+
+sleep(3000)
+
+Send("{alt}")
+sleep(1800)
+Send("s")
+sleep(1000)
+Send("m")
+sleep(1000)
+
+;mouseclick("left",450,295,1) ;fixed number
+mouseclick("left",372,296,1) ;variable number
+sleep(1000)
+mouseclick("left",626,317,1) ; A-vlaue
+sleep(1000)
+send("4")
+sleep(1000)
+send("{Enter}")
+sleep(1000)
+mouseclick("left",512,177,1)
+sleep(1000)
+send("50")
+sleep(1000)
+send("{Enter}")
+sleep(1300)
+
+;F-tree selection option
+   Send("{Alt}")
+   Sleep(1000)
+   send("s")
+   Sleep(1000)
+   send("n")
+   Sleep(1500)
+ ;load ztr file
+   Send("{Alt}")
+   Sleep(1000)
+   send("i")
+   Sleep(1000)
+   send("z")
+   Sleep(1000)
+   send("l")
+   Sleep(1000)
+   Send($input3)
+   Sleep(1500)
+   Send("{Enter}")
+   Sleep(1000)
+
+   ;save distribution map bmp
+   Send("{Alt}")
+   Sleep(1000)
+   Send("r")
+   Sleep(1000)
+   Send("s")
+   Sleep(600)
+   Send("s")
+   Sleep(600)
+   Send("s")
+   Sleep(1100)
+   Send($outbmp)
+   Sleep(1500)
+   Send("{Enter}")
+   Sleep(1000)
+   Send("{Enter}")
+   Sleep(1000)
+   ;options for management (Bk)
+
+
+
+   ;start simulation
+   sleep(2000)
+   Send("{Alt}")
+   Sleep(1000)
+   send("s")
+   Sleep(1000)
+   Send("t")
+   Sleep(700)
+   Send("t")
+
+   Sleep(2000)
+Msgbox(4096+1, "slv_"&$i, "This message box will timeout after 2sec or select the OK button.", 2)
+;MsgBox($MB_SYSTEMMODAL, "Process", "This message box will timeout after 2minutes or select the OK button.", 300)
+Sleep(1500)
+   ;save stand image as bmp
+
+   ;Send("b")
+   ;Sleep(1000)
+   ;Send($outbmp)
+   ;Sleep(1500)
+   ;Send("{Enter}")
+   ;Sleep(1000)
+   ;Send("{Enter}")
+   ;Sleep(1000)
+
+;minimize window
+   Send("!w")
+   Sleep(1000)
+   send("m")
+   Sleep(1000)
+
+   ;save result as .slv
+   ;$output="c:\silva\"&$site&"\"&$site&"_"&$i+1&".slv"
+   Sleep(1000)
+   Send("!f")
+   Sleep(1000)
+   Send("v")
+   Sleep(1000)
+   send($output)
+   Sleep(1500)
+   Send("{Enter}")
+   Sleep(1000)
+
+   ;save bmp result distribution
+
+
+;terminate SILVA
+   Send("!f")
+   Sleep(500)
+   Send("x")
+   Sleep(1000)
+
+
+   Next
