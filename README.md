@@ -8,5 +8,6 @@ update how to simulate
 2. produce seeds
 3. calculating competition index in Silva
 4. remove competitive seedlings
-5. simulation 1 periods in Silva
-6. prevent unexpected tree death
+5. Select trees which will not die
+6. simulation 1 periods in Silva
+
