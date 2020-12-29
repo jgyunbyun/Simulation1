@@ -1,5 +1,10 @@
 ### README.md
 
+# Please give more information:
+Author?
+Aim?
+Dependencies?
+etc.
 
 	
 update how to simulate 
