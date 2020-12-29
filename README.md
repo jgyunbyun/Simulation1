@@ -1,12 +1,5 @@
 ### README.md
 
-# Please give more information:
-Author?
-Aim?
-Dependencies?
-etc.
-
-	
 update how to simulate 
 
 1. start with Autoit
