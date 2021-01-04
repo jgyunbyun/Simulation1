@@ -19,7 +19,7 @@ Institute for Environmental Reesearch
 RWTH Aachen University
 Worringerweg 1
 52074 Aachen
-Current contact: jaegyun.byun@bio5.rwth-aachen.de
+Current contact: jae-gyun.byun@rwth-aachen.de
 Last update, January 2021
 
 
