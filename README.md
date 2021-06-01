@@ -1,15 +1,13 @@
 ### README.md
 
-update how to simulate 
+How to simulate:
 
-1. start with Autoit
-2. produce seeds
-3. calculating competition index in Silva
-4. remove competitive seedlings
+1. Start with Autoit
+2. Produce seeds
+3. Calculate competition index in Silva
+4. Remove competitive seedlings
 5. Select trees which will not die
-6. simulation 1 periods in Silva
-
-### README.md
+6. Simulation 1 periods in Silva
 
 ### Author
 
@@ -22,33 +20,29 @@ Worringerweg 1
 Current contact: jae-gyun.byun@rwth-aachen.de
 Last update, January 2021
 
-
-
-
 ### Aim
 
-To generate and implement a simulation model in order to realistically depict the stands’ natural dynamics of stem volume development resulting from these different management approaches such as (1) plantation, (2) continuous cover forestry, and (3) reserved forestry. 
+To generate and implement a simulation model in order to realistically depict the stands’ natural dynamics of stem volume development resulting from three different management approaches such as (1) plantation, (2) continuous cover forestry, and (3) reserved forestry. 
 
 ### Features
-Develop a hybrid model using Wrapper function
 
+Develop a hybrid model using a wrapper function
 
 ### Dependencies
+
 %Existing Tree growth models, here SILVA forest simulator was selected for using validated tree growth calculation.
 %Automation software; Autoit
 %R for computing the regeneration and the local forest management
 
-
-
-
 ### How to use?
-There is three codes such as autoit, seed, subset.
 
-1. Before starting autoit script, you need initial .slv text file as SILVA input.
+There are three code files such as autoit, seed, and subset.
 
-2. Need to change the path for two R script(seed; line 56 & subset; line 190) in autoit script.
+1. Before starting the Autoit script, you need an initial .slv text file as SILVA input.
 
-3. Please change the simulation period at 15 line.
+2. You need to change the path in two of the R scripts (seed: line 56, subset: line 190) in autoit script.
 
-4. Run autoit script.
+3. Change the simulation period at line 15 line
+
+4. Run the Autoit script.
 
